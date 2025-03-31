@@ -1,0 +1,118 @@
+/* In your CSS */
+/* Critical CSS (inline in <head>) */
+.about {
+  --about-gap: 2rem;
+  background: var(--sky-0);
+}
+
+.about__container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  max-height: 50vh;
+  padding: 1rem;
+}
+
+.about__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about__title {
+  font-size: 2rem;
+  color: var(--natural-6);
+  margin-bottom: 0.5rem;
+}
+
+.about__subtitle {
+  color: var(--natural-4);
+  font-size: 1.1rem;
+}
+
+.about__content {
+  max-width: 60%;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about__visual {
+  max-width: 40%;
+}
+
+.about__image {
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(var(--natural-7), 0.1);
+  transform: rotate(-2deg);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.about__image:hover {
+  transform: rotate(0);
+}
+
+.about__highlights {
+  /*display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;*/
+  display: flex;
+  flex-direction: row;
+}
+
+.highlight-card {
+  padding: 1.5rem;
+  background: var(--earth-0);
+  border-radius: 0.5rem;
+  border-left: 4px solid var(--natural-3);
+}
+
+.highlight-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: var(--natural-4);
+  margin-bottom: 1rem;
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--accent-1);
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__image {
+    transition: none;
+  }
+}
+
+/* SVG Sprite (include in footer) */
+@media (max-width: 768px) {
+  .about {
+    height: 140vh; /* New height for mobile */
+  }
+
+  .about__container {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 1.5rem; /* Optional: adjust padding */
+  }
+
+  .about__content,
+  .about__visual {
+    max-width: 100%; /* Full width for mobile */
+  }
+
+  .about__highlights {
+    flex-direction: column; /* Stack highlight cards */
+  }
+}

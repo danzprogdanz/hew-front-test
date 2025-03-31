@@ -1,0 +1,41 @@
+.lead-capture,
+.product-page {
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.product-page.active {
+  opacity: 1;
+  transform: translateX(0);
+  /* Delay entrance until exit completes */
+  transition-delay: 1.8s;
+}
+
+.split-layout {
+  transition: transform 4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.split-layout.slide-out {
+  transform: translateX(-3000%);
+  opacity: 0;
+  /* Slower transition for both properties */
+  transition: transform 40s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Initial state for product page */
+.product-page:not(.active) {
+  opacity: 0;
+  transform: translateX(40px);
+  /* No delay when exiting */
+  transition-delay: 0s;
+}
+
+.lead-capture {
+  overflow: hidden;
+  transform: translateZ(0);
+}

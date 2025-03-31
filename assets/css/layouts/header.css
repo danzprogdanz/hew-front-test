@@ -1,0 +1,105 @@
+.nav-header {
+  height: var(--header-height); /* Original height */
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  z-index: 1000;
+  padding: 0 5%;
+  transition: all 0.5s ease-in-out;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: transparent; /* Background only when scrolled */
+  backdrop-filter: blur(8px);
+  color: var(--natural-7);
+}
+
+.nav-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: color-mix(in srgb, var(--natural-3) 10%, transparent);
+  z-index: -1; /* Place behind header content */
+}
+
+/* Scrolled state - will be added by JS */
+.nav-header.scrolled {
+  background: var(--natural-3);
+  height: var(--header-height-scrolled); /* Half of original height */
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  color: var(--stone-0);
+}
+
+.header-logo {
+  font-size: 35px; /* Original size */
+  transition: all 0.3s ease-in-out;
+}
+
+.header-logo.scrolled {
+  font-size: 25px; /* Smaller size when scrolled */
+}
+
+.header-nav a {
+  color: inherit;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Default state (not scrolled) hover */
+.header-nav a:hover {
+  color: var(--accent-1); /* Terracotta red for contrast with dark text */
+  background: color-mix(in srgb, var(--accent-1) 8%, transparent);
+  transform: translateY(-2px);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* Scrolled state hover */
+.header.scrolled .header-nav a:hover {
+  color: var(--blossom-1); /* Honey amber for contrast with light text */
+  background: color-mix(in srgb, var(--blossom-1) 12%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--signal-1) 50%, transparent);
+}
+
+/* Focus states for accessibility */
+.header-nav a:focus-visible {
+  outline: 2px solid var(--signal-1);
+  outline-offset: 2px;
+}
+
+/* Responsive hover for devices without hover */
+@media (hover: none) {
+  .header-nav a:hover {
+    transform: none;
+    text-decoration: underline;
+  }
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-header li {
+  display: inline-block;
+  margin: 0 1rem;
+}

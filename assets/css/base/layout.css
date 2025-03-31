@@ -1,0 +1,25 @@
+/* Flex Utilities */
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Grid Utilities */
+.grid {
+  display: grid;
+}
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Gap Utilities */
+.gap-100 {
+  gap: var(--spacing-100);
+}
+.gap-400 {
+  gap: var(--spacing-400);
+}

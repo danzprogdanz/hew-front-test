@@ -1,0 +1,115 @@
+/* In your CSS components */
+.countdown {
+  --timer-gap: 1.5rem;
+  --time-value-size: 3.5rem;
+  --time-label-size: 0.875rem;
+
+  padding: 4rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    var(--natural-1) 0%,
+    var(--natural-3) 100%
+  );
+  text-align: center;
+}
+
+.countdown__content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.countdown__title {
+  color: var(--natural-7);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  margin-bottom: 1rem;
+}
+
+.countdown__description {
+  color: var(--natural-5);
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+}
+
+.countdown__timer {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: var(--timer-gap);
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.time-unit {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.time-value {
+  font-family: 'Roboto Mono', monospace;
+  font-size: var(--time-value-size);
+  font-weight: 700;
+  color: var(--signal-1);
+  line-height: 1;
+  padding: 0.5rem;
+  min-width: 4.5rem;
+  background: var(--natural-0);
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.time-label {
+  font-size: var(--time-label-size);
+  color: var(--natural-5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.time-separator {
+  font-size: var(--time-value-size);
+  color: var(--natural-4);
+  align-self: center;
+  margin: 0 -0.5rem;
+}
+
+.countdown__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  transition: transform 0.2s ease;
+}
+
+.countdown__cta:hover {
+  transform: translateY(-2px);
+}
+
+.cta-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.countdown__cta.cta-button {
+  width: fit-content;
+}
+
+@media (max-width: 480px) {
+  .countdown__timer {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .time-value {
+    font-size: 2.5rem;
+    min-width: 3.5rem;
+  }
+
+  .time-separator {
+    font-size: 2rem;
+  }
+}

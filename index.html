@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Descubra o Produto XYZ - Solução revolucionária para saúde e bem-estar. Garanta 20% OFF no primeiro pedido!"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Produto XYZ",
+        "image": "https://example.com/product.jpg",
+        "description": "Solução completa para saúde e bem-estar com ingredientes 100% naturais",
+        "brand": {
+          "@type": "Brand",
+          "name": "XYZ Natural"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "199.90",
+          "priceCurrency": "BRL"
+        }
+      }
+    </script>
+
+    <!-- Async CSS -->
+    <link
+      rel="stylesheet"
+      href="./assets/css/main.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <style>
+      /* Inlined critical CSS */
+      /* Critical CSS for lead capture section */
+      :root {
+        --color-primary: #2c3e50;
+        --color-accent: #3498db;
+        --spacing-xl: 2rem;
+        --spacing-lg: 1.5rem;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          'Helvetica Neue', Arial, sans-serif;
+      }
+
+      .lead-capture {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: var(--spacing-xl);
+        background: var(--natural-3);
+      }
+
+      .split-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 86vw;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
+        /* Fallback color first */
+        background-color: var(--natural-3);
+
+        /* Modern background with gradient overlay */
+        background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.05)
+          ),
+          url(https://img.freepik.com/free-photo/flat-lay-assortment-sand-leaves_23-2148724084.jpg);
+        /* Added missing semicolon here ^ */
+        /* To do, find an way use webp */
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .form-section {
+        display: flex;
+        flex-direction: column;
+        padding: var(--spacing-xl);
+        gap: var(--spacing-lg);
+        justify-content: space-around;
+        padding: 4rem;
+
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      }
+
+      .lead-form {
+        display: grid;
+        gap: var(--spacing-lg);
+      }
+
+      .media-section {
+        position: relative;
+        background: transparent;
+      }
+
+      @media (max-width: 768px) {
+        .split-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .media-section {
+          display: none;
+        }
+      }
+    </style>
+    <!-- Load remaining CSS asynchronously -->
+    <link
+      rel="stylesheet"
+      href="./assets/css/main.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="./assets/css/main.css" /></noscript>
+  </head>
+  <body>
+    <div
+      id="loadingOverlay"
+      class="loading-overlay"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div class="spinner"></div>
+    </div>
+    <!-- Formulário de Captura -->
+    <main class="lead-capture" id="leadCapture">
+      <div class="split-layout">
+        <!-- Media Section -->
+        <div class="media-section" aria-label="Demonstração do produto"></div>
+
+        <!-- Form Section -->
+        <section class="form-section" aria-labelledby="formHeading">
+          <!--<header class="form-header">
+            <h1 id="formHeading" class="form-title">
+              🍃 Transforme Sua Saúde Hoje!
+              <span class="highlight">20% OFF</span> no Primeiro Pedido
+            </h1>
+            <p class="form-subtitle">
+              Cadastre-se para receber seu desconto exclusivo + guia nutricional
+              gratuito
+            </p>
+          </header>-->
+          <form id="leadForm" class="lead-form" novalidate>
+            <div class="form-group">
+              <label for="name">Nome Completo</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                autocomplete="name"
+                aria-describedby="name-error"
+              />
+              <span
+                id="name-error"
+                class="error-message"
+                aria-live="polite"
+              ></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                autocomplete="email"
+                aria-describedby="email-error"
+              />
+              <span
+                id="email-error"
+                class="error-message"
+                aria-live="polite"
+              ></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+                placeholder="(99) 99999-9999"
+                inputmode="numeric"
+                autocomplete="tel"
+                aria-describedby="phone-error"
+              />
+              <span
+                id="phone-error"
+                class="error-message"
+                aria-live="polite"
+              ></span>
+            </div>
+
+            <button type="submit" class="cta-button">Enviar</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <!-- Página do Produto (inicialmente oculta) -->
+    <div class="product-page" id="productPage" style="display: none">
+      <!-- Header Fixo -->
+      <header id="nav-header" class="nav-header">
+        <div class="header-logo" id="logo">Logo</div>
+        <nav class="header-nav" id="navbar" aria-label="Navegação principal">
+          <ul role="menu">
+            <li role="none"><a role="menuitem" href="#hero">Home</a></li>
+            <li role="none"><a role="menuitem" href="#about">About</a></li>
+            <li role="none"><a role="menuitem" href="#gallery">Gallery</a></li>
+            <li role="none">
+              <a role="menuitem" href="#testimonials">Testimonials</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="#countdown">Adquira</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Seção Hero com Carrossel -->
+      <!-- Hero Section -->
+      <section id="hero" class="hero" aria-label="Apresentação do produto">
+        <div
+          class="hero__carousel"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Galeria de imagens do produto"
+        >
+          <!-- Carousel Items -->
+          <div class="carousel__track" data-carousel-track>
+            <!-- Item 1 -->
+            <article
+              class="carousel__item active"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="Slide 1 de 3"
+              data-carousel-item
+            >
+              <picture class="carousel__image">
+                <!-- WebP with JPEG fallback -->
+                <source
+                  srcset="
+                    https://img.freepik.com/free-psd/traveler-hot-sun-desert_23-2150177838.jpg
+                  "
+                  type="image/jpg"
+                />
+                <source
+                  srcset="
+                    https://img.freepik.com/free-psd/traveler-hot-sun-desert_23-2150177838.jpg
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  src="https://img.freepik.com/free-psd/traveler-hot-sun-desert_23-2150177838.jpg"
+                  alt="Pessoa ativa praticando esporte com o suplemento"
+                  loading="eager"
+                  width="1920"
+                  height="1080"
+                />
+              </picture>
+              <div class="carousel__content">
+                <h2 class="carousel__title">Energia que Transforma</h2>
+                <p class="carousel__text">
+                  Desbloqueie seu potencial com nossa fórmula avançada
+                </p>
+              </div>
+            </article>
+            <article
+              class="carousel__item active"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="Slide 1 de 3"
+              data-carousel-item
+            >
+              <picture class="carousel__image">
+                <!-- WebP with JPEG fallback -->
+                <source
+                  srcset="
+                    https://img.freepik.com/free-photo/determined-muscular-build-woman-running-while-exercising-nature-copy-space_637285-4877.jpg
+                  "
+                  type="image/jpg"
+                />
+                <source
+                  srcset="
+                    https://img.freepik.com/free-photo/determined-muscular-build-woman-running-while-exercising-nature-copy-space_637285-4877.jpg
+                  "
+                  type="image/jpg"
+                />
+                <img
+                  src="https://img.freepik.com/free-photo/determined-muscular-build-woman-running-while-exercising-nature-copy-space_637285-4877.jpg"
+                  alt="Pessoa ativa praticando esporte com o suplemento"
+                  loading="eager"
+                  width="1920"
+                  height="1080"
+                />
+              </picture>
+              <div class="carousel__content">
+                <h2 class="carousel__title">Energia que Transforma 2</h2>
+                <p class="carousel__text">
+                  Desbloqueie seu potencial com nossa fórmula avançada 2 
+                </p>
+              </div>
+            </article>
+
+            <!-- Repeat for other items -->
+          </div>
+
+          
+          
+
+          <!-- Controls -->
+          <div class="carousel__controls">
+            <button
+              class="carousel__btn prev"
+              aria-label="Slide anterior"
+              data-carousel-prev
+            >
+              <span aria-hidden="true">&lsaquo;</span>
+            </button>
+
+            <!-- Thumbnails -->
+          <div
+          class="carousel__thumbs"
+          role="group"
+          aria-label="Seleção de slides"
+        >
+          <button
+            class="thumb__item active"
+            aria-label="Mostrar slide 1"
+            data-carousel-thumb="0"
+            aria-current="true"
+          >
+            <img
+              src="https://img.freepik.com/free-psd/traveler-hot-sun-desert_23-2150177838.jpg"
+              alt="Miniatura slide 1"
+              loading="lazy"
+              width="120"
+              height="80"
+            />
+          </button>
+          <button
+            class="thumb__item active"
+            aria-label="Mostrar slide 1"
+            data-carousel-thumb="0"
+            aria-current="true"
+          >
+            <img
+              src="https://img.freepik.com/free-photo/determined-muscular-build-woman-running-while-exercising-nature-copy-space_637285-4877.jpg"
+              alt="Miniatura slide 1"
+              loading="lazy"
+              width="120"
+              height="80"
+            />
+          </button>
+          <!-- Repeat for other thumbs -->
+        </div>
+            <button
+              class="carousel__btn next"
+              aria-label="Próximo slide"
+              data-carousel-next
+            >
+              <span aria-hidden="true">&rsaquo;</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about" aria-labelledby="about-heading">
+        <header class="about__header">
+          <h2 id="about-heading" class="about__title">
+            Ciência e Natureza em Cada Cápsula
+          </h2>
+          <p class="about__subtitle">
+            Uma fusão perfeita entre pesquisa avançada e ingredientes naturais
+          </p>
+        </header>
+        <div class="about__container">
+          <article class="about__content">
+            <div class="about__text">
+              <p class="about__lead">
+                Desenvolvido através de <strong>10 anos de pesquisa</strong> em
+                parceria com os principais institutos de nutrição do país, nosso
+                suplemento combina os melhores compostos naturais com tecnologia
+                farmacêutica de ponta.
+              </p>
+
+              <div class="about__highlights">
+                <svg class="highlight-icon" aria-hidden="true">
+                  <!-- SVG for leaf icon -->
+                  <use href="#leaf-icon"></use>
+                </svg>
+                <div class="highlight-card">
+                  <h3 class="highlight-title">100% Ingredientes Naturais</h3>
+                  <p class="highlight-text">
+                    Selecionados de fontes sustentáveis
+                  </p>
+                </div>
+                <!-- Repeat for other highlights -->
+              </div>
+
+              <dl class="about__stats">
+                <div class="stat-item">
+                  <dt class="stat-value">87%</dt>
+                  <dd class="stat-label">Relatam mais energia em 30 dias</dd>
+                </div>
+                <div class="stat-item">
+                  <dt class="stat-value">99%</dt>
+                  <dd class="stat-label">Pureza comprovada em laboratório</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <figure class="about__visual">
+            <picture>
+              <source
+                srcset="assets/img/about-product.webp"
+                type="image/webp"
+              />
+              <img
+                src="assets/img/about-product.jpg"
+                alt="Cápsulas do VitalSuplementos com ingredientes naturais ao fundo"
+                class="about__image"
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+            </picture>
+            <figcaption class="about__caption">
+              Formulação premium com extrato puro de Ashwagandha
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Galeria -->
+      <section id="gallery" class="gallery section-py">
+        <div class="container">
+          <header class="gallery-header">
+            <h2 class="gallery-title">Explore Nossa Formulação</h2>
+            <p class="gallery-subtitle">
+              Ingredientes naturais em perfeita harmonia
+            </p>
+          </header>
+
+          <div class="gallery-grid">
+            <!-- Gallery Items - Use loading="lazy" and proper srcset -->
+            <figure class="gallery-item">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3VGA3uV7vyWOgQjpAG8KzKSFRg9RaPlfR-ELU2JGcA_ZWgt7euOXUJRDx5MUhR3mUcLI&usqp=CAU"
+                srcset="assets/img/gallery/thumb-1@2x.webp 2x"
+                loading="lazy"
+                alt="Cápsula com extrato natural"
+                class="gallery-image"
+                data-fullsize="assets/img/gallery/full-1.webp"
+                data-index="0"
+              />
+              <figcaption class="gallery-caption">
+                Extrato Puro de Ashwagandha
+              </figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://static.vecteezy.com/ti/fotos-gratis/p2/13665138-ervas-curativas-raizes-e-extratos-em-fitoterapia-foto.jpg"
+                srcset="assets/img/gallery/thumb-1@2x.webp 2x"
+                loading="lazy"
+                alt="Cápsula com extrato natural"
+                class="gallery-image"
+                data-fullsize="assets/img/gallery/full-1.webp"
+                data-index="0"
+              />
+              <figcaption class="gallery-caption">
+                Extrato Puro de Ashwagandha
+              </figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://img.freepik.com/fotos-premium/ervas-curativas-fitoterapia_75924-22653.jpg"
+                srcset="assets/img/gallery/thumb-1@2x.webp 2x"
+                loading="lazy"
+                alt="Cápsula com extrato natural"
+                class="gallery-image"
+                data-fullsize="assets/img/gallery/full-1.webp"
+                data-index="0"
+              />
+              <figcaption class="gallery-caption">
+                Extrato Puro de Ashwagandha
+              </figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoLbWA3a66Y_5fZuiOjZe08ty7n_vwcFDo44bRen2YYZZvE-8z-w4Hwfv7k9bv6mnAwmM&usqp=CAU"
+                srcset="assets/img/gallery/thumb-1@2x.webp 2x"
+                loading="lazy"
+                alt="Cápsula com extrato natural"
+                class="gallery-image"
+                data-fullsize="assets/img/gallery/full-1.webp"
+                data-index="0"
+              />
+              <figcaption class="gallery-caption">
+                Extrato Puro de Ashwagandha
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- In your product-page section -->
+      <section
+        id="testimonials"
+        class="testimonials"
+        aria-labelledby="testimonials-heading"
+      >
+        <div class="testimonials__inner container">
+          <header class="testimonials__header">
+            <h2 id="testimonials-heading" class="testimonials__title">
+              Histórias de Transformação
+            </h2>
+            <p class="testimonials__subtitle">
+              Veja o que nossos clientes estão dizendo
+            </p>
+          </header>
+
+          <div class="testimonials__carousel" data-carousel>
+            <div class="testimonials__track" data-track>
+              <!-- Testimonial Items -->
+              <article
+                class="testimonial"
+                itemscope
+                itemtype="https://schema.org/Review"
+              >
+                <div class="testimonial__content">
+                  <blockquote class="testimonial__quote">
+                    <p itemprop="reviewBody">
+                      Depois de 3 meses usando o produto, minha energia aumentou
+                      significativamente. Recomendo!
+                    </p>
+                  </blockquote>
+                  <footer class="testimonial__footer">
+                    <img
+                      src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg"
+                      alt=""
+                      class="testimonial__avatar"
+                      loading="lazy"
+                      width="56"
+                      height="56"
+                    />
+                    <div class="testimonial__author">
+                      <h3 class="testimonial__name" itemprop="author">
+                        Ana Silva
+                      </h3>
+                      <p class="testimonial__meta">
+                        Consultora de Saúde • 42 anos
+                      </p>
+                      <div
+                        class="testimonial__rating"
+                        aria-label="Avaliação: 5 estrelas"
+                      >
+                        ★★★★★
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </article>
+              <article
+                class="testimonial"
+                itemscope
+                itemtype="https://schema.org/Review"
+              >
+                <div class="testimonial__content">
+                  <blockquote class="testimonial__quote">
+                    <p itemprop="reviewBody">
+                      Depois de 3 meses usando o produto, minha energia aumentou
+                      significativamente. Recomendo!
+                    </p>
+                  </blockquote>
+                  <footer class="testimonial__footer">
+                    <img
+                      src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg"
+                      alt=""
+                      class="testimonial__avatar"
+                      loading="lazy"
+                      width="56"
+                      height="56"
+                    />
+                    <div class="testimonial__author">
+                      <h3 class="testimonial__name" itemprop="author">
+                        Ana Silva
+                      </h3>
+                      <p class="testimonial__meta">
+                        Consultora de Saúde • 42 anos
+                      </p>
+                      <div
+                        class="testimonial__rating"
+                        aria-label="Avaliação: 5 estrelas"
+                      >
+                        ★★★★★
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </article>
+              <article
+                class="testimonial"
+                itemscope
+                itemtype="https://schema.org/Review"
+              >
+                <div class="testimonial__content">
+                  <blockquote class="testimonial__quote">
+                    <p itemprop="reviewBody">
+                      Depois de 3 meses usando o produto, minha energia aumentou
+                      significativamente. Recomendo!
+                    </p>
+                  </blockquote>
+                  <footer class="testimonial__footer">
+                    <img
+                      src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg"
+                      alt=""
+                      class="testimonial__avatar"
+                      loading="lazy"
+                      width="56"
+                      height="56"
+                    />
+                    <div class="testimonial__author">
+                      <h3 class="testimonial__name" itemprop="author">
+                        Ana Silva
+                      </h3>
+                      <p class="testimonial__meta">
+                        Consultora de Saúde • 42 anos
+                      </p>
+                      <div
+                        class="testimonial__rating"
+                        aria-label="Avaliação: 5 estrelas"
+                      >
+                        ★★★★★
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </article>
+              <article
+                class="testimonial"
+                itemscope
+                itemtype="https://schema.org/Review"
+              >
+                <div class="testimonial__content">
+                  <blockquote class="testimonial__quote">
+                    <p itemprop="reviewBody">
+                      Depois de 3 meses usando o produto, minha energia aumentou
+                      significativamente. Recomendo!
+                    </p>
+                  </blockquote>
+                  <footer class="testimonial__footer">
+                    <img
+                      src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg"
+                      alt=""
+                      class="testimonial__avatar"
+                      loading="lazy"
+                      width="56"
+                      height="56"
+                    />
+                    <div class="testimonial__author">
+                      <h3 class="testimonial__name" itemprop="author">
+                        Ana Silva
+                      </h3>
+                      <p class="testimonial__meta">
+                        Consultora de Saúde • 42 anos
+                      </p>
+                      <div
+                        class="testimonial__rating"
+                        aria-label="Avaliação: 5 estrelas"
+                      >
+                        ★★★★★
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </article>
+              <article
+                class="testimonial"
+                itemscope
+                itemtype="https://schema.org/Review"
+              >
+                <div class="testimonial__content">
+                  <blockquote class="testimonial__quote">
+                    <p itemprop="reviewBody">
+                      Depois de 3 meses usando o produto, minha energia aumentou
+                      significativamente. Recomendo!
+                    </p>
+                  </blockquote>
+                  <footer class="testimonial__footer">
+                    <img
+                      src="https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671142.jpg"
+                      alt=""
+                      class="testimonial__avatar"
+                      loading="lazy"
+                      width="56"
+                      height="56"
+                    />
+                    <div class="testimonial__author">
+                      <h3 class="testimonial__name" itemprop="author">
+                        Ana Silva
+                      </h3>
+                      <p class="testimonial__meta">
+                        Consultora de Saúde • 42 anos
+                      </p>
+                      <div
+                        class="testimonial__rating"
+                        aria-label="Avaliação: 5 estrelas"
+                      >
+                        ★★★★★
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </article>
+
+              <!-- Repeat other testimonials -->
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="testimonials__controls">
+              <button
+                class="testimonials__nav testimonials__nav--prev"
+                aria-label="Depoimento anterior"
+              >
+                ←
+              </button>
+              <div
+                class="testimonials__pagination"
+                data-pagination
+                role="tablist"
+              ></div>
+              <button
+                class="testimonials__nav testimonials__nav--next"
+                aria-label="Próximo depoimento"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contador Regressivo -->
+      <!-- In your product page section -->
+      <section
+        id="countdown"
+        class="countdown"
+        aria-label="Contagem regressiva de promoção"
+      >
+        <div class="countdown__content">
+          <h2 class="countdown__title">Oferta Especial por Tempo Limitado!</h2>
+          <p class="countdown__description">
+            Garanta seu desconto antes que o tempo expire!
+          </p>
+
+          <div class="countdown__timer" role="timer" aria-live="assertive">
+            <div class="time-unit">
+              <span class="time-value" id="minutes">15</span>
+              <span class="time-label">Minutos</span>
+            </div>
+            <span class="time-separator" aria-hidden="true">:</span>
+            <div class="time-unit">
+              <span class="time-value" id="seconds">00</span>
+              <span class="time-label">Segundos</span>
+            </div>
+          </div>
+
+          <button
+            class="countdown__cta cta-button"
+            aria-label="Garantir oferta agora"
+          >
+            <span>Garantir Meu Desconto</span>
+            <svg class="cta-icon" aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7z" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <footer class="main-footer">
+        <div class="footer-container">
+          <!-- Top Section -->
+          <div class="footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+              <div class="footer-logo" aria-hidden="true">
+                <svg
+                  viewBox="0 0 48 48"
+                  style="height: 2.5rem; fill: var(--natural-4)"
+                >
+                  <path
+                    d="M24 4L6 16v16l18 12 18-12V16L24 4zm0 27c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z"
+                  />
+                </svg>
+                <span class="sr-only">VitalSuplementos</span>
+              </div>
+              <p class="footer-slogan">Sua Saúde, Nossa Missão</p>
+              <div class="security-badge">
+                <svg
+                  class="lock-icon"
+                  viewBox="0 0 24 24"
+                  style="fill: var(--accent-2)"
+                >
+                  <path
+                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                  />
+                </svg>
+                <span>Site 100% Seguro</span>
+              </div>
+            </div>
+
+            <!-- Links Column -->
+            <nav class="footer-nav" aria-label="Links institucionais">
+              <h4 class="nav-title">Institucional</h4>
+              <ul>
+                <li><a href="/sobre" class="footer-link">Nossa História</a></li>
+                <li>
+                  <a href="/faq" class="footer-link">Perguntas Frequentes</a>
+                </li>
+                <li>
+                  <a href="/entregas" class="footer-link"
+                    >Política de Entregas</a
+                  >
+                </li>
+                <li>
+                  <a href="/trocas" class="footer-link">Trocas e Devoluções</a>
+                </li>
+              </ul>
+            </nav>
+
+            <!-- Social Column -->
+            <div class="footer-social">
+              <h4 class="social-title">Conecte-se</h4>
+              <div class="social-icons">
+                <a
+                  href="#"
+                  class="social-icon instagram"
+                  aria-label="Instagram"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.25a1.25 1.25 0 0 0-2.5 0 1.25 1.25 0 0 0 2.5 0zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-icon whatsapp" aria-label="WhatsApp">
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Section -->
+          <div class="footer-bottom">
+            <p class="copyright">
+              © 2024 VitalSuplementos.
+              <span class="inspiration-text"
+                >Cultivando bem-estar desde 2020</span
+              >
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Modal Galeria -->
+      <dialog id="galleryModal" class="modal">
+        <div class="modal-content">
+          <img src="" alt="" class="modal-image" />
+          <button
+            class="modal-close d-flex align-center justify-center"
+            aria-label="Close modal"
+          >
+            ×
+          </button>
+          <button class="modal-nav modal-prev" aria-label="Previous image">
+            ‹
+          </button>
+          <button class="modal-nav modal-next" aria-label="Next image">
+            ›
+          </button>
+        </div>
+      </dialog>
+    </div>
+    <!-- Scripts -->
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

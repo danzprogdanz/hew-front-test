@@ -1,0 +1,143 @@
+/* In your CSS components */
+.testimonials {
+  --testimonial-gap: 2rem;
+  --card-padding: 2rem;
+  background: var(--sky-0);
+}
+
+.testimonials__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.testimonials__title {
+  font-size: 2rem;
+  color: var(--natural-6);
+  margin-bottom: 0.5rem;
+}
+
+.testimonials__subtitle {
+  color: var(--natural-4);
+  font-size: 1.1rem;
+}
+
+.testimonials__carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials__track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.testimonial {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial.active {
+  opacity: 1;
+}
+
+.testimonial__content {
+  background: white;
+  border-radius: 1rem;
+  padding: var(--card-padding);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial__quote {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--natural-6);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.testimonial__quote::before {
+  content: '“';
+  position: absolute;
+  left: 0;
+  top: -0.5rem;
+  font-size: 3rem;
+  color: var(--accent-2);
+}
+
+.testimonial__footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial__rating {
+  color: var(--accent-2);
+  font-size: 1.2rem;
+}
+
+.testimonials__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.testimonials__nav {
+  background: none;
+  border: 1px solid var(--sky-2);
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.testimonials__nav:hover {
+  background: var(--sky-1);
+}
+
+.testimonials__pagination {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.testimonials__pagination button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--natural-3);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.testimonials__pagination button.active {
+  background: var(--natural-3);
+  border-color: var(--natural-3);
+}
+
+@media (min-width: 768px) {
+  .testimonial {
+    flex: 0 0 calc(50% - var(--testimonial-gap));
+    max-width: calc(50% - var(--testimonial-gap));
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial {
+    flex: 0 0 calc(33.333% - var(--testimonial-gap));
+    max-width: calc(33.333% - var(--testimonial-gap));
+  }
+}

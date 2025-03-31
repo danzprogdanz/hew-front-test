@@ -1,0 +1,70 @@
+/* Form Styling */
+.lead-form {
+  --input-padding: 0.75rem;
+  --input-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.5rem;
+  /* Remove fixed height and use min-height instead */
+  min-height: 5rem; /* Adjust this value as needed */
+  width: 100%;
+  /* Create explicit grid rows for label, input, and error message */
+  grid-template-rows: auto auto 1fr;
+}
+
+input {
+  padding: var(--input-padding);
+  border: 1px solid #ced4da;
+  border-radius: var(--input-radius);
+  width: 100%;
+}
+
+input:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.cta-button {
+  background: var(--natural-6);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: var(--input-radius);
+  cursor: pointer;
+  transition: opacity 0.2s;
+  width: 100%;
+}
+
+.cta-button:hover {
+  opacity: 0.9;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875rem;
+  /* Reserve space for error message */
+  min-height: 1.25rem;
+  /* Ensure proper alignment */
+  align-self: start;
+}
+
+.error-message {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  animation: shake 0.3s ease-in-out;
+}
+
+.error-message:not(:empty) {
+  opacity: 1;
+}
+
+[aria-invalid='true'] {
+  border-color: #dc3545;
+}

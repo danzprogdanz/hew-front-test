@@ -1,0 +1,187 @@
+:root {
+  /* Light Color System */
+  --lightreader-neutral-background: var(
+    --lightreader-background-181a1b,
+    #ffffff
+  );
+  --lightreader-neutral-text: var(--lightreader-text-e8e6e3, #000000);
+  --lightreader-selection-background: var(
+    --lightreader-background-004daa,
+    #0060d4
+  );
+  --lightreader-selection-text: var(--lightreader-text-e8e6e3, #ffffff);
+  --lightreader-background-181a1b: #ffffff;
+  --lightreader-text-e8e6e3: #000000;
+  --lightreader-border-776e62: #404040;
+  --lightreader-border-736b5e: #4c4c4c;
+  --lightreader-text-3391ff: #0040ff;
+  --lightreader-border-545b5e: #808080;
+  --lightreader-text-b2aba1: #a9a9a9;
+  --lightreader-background-404400: #faffbd;
+  --lightreader-background-202324: #f1f1f1;
+  --lightreader-background-454a4d: #b0b0b0;
+  --lightreader-background-004daa: #0060d4;
+  --lightreader-background-684b00: #ffd76e;
+  --lightreader-background-9e7e00: #c59d00;
+  --lightreader-text-d7d4cf: #302505;
+  --lightreader-background-1b4958: #add8e6;
+  --lightreader-background-0f3a47: #cfecf5;
+  --lightreader-background-1e2021: #f5f5f5;
+  --lightreader-background-432c09: #faedda;
+  --lightreader-background-245d70: #85c3d8;
+  --lightreader-background-1a1c1e: #fafbfc;
+  --lightreader-background-1f2123: #f2f3f4;
+  --lightreader-background-26292a: #e6e7e8;
+  --lightreader-border-373b3e: #e6e7e8;
+  --lightreader-background-34393b: #cccdce;
+  --lightreader-border-3e4346: #cccdce;
+  --lightreader-background-42484b: #b3b4b5;
+  --lightreader-text-3da3ff: #0066ee;
+  --lightreader-border-004fb8: #0066ee;
+  --lightreader-background-20232a: #282c34;
+  --lightreader-text-cbc6c0: #282c34;
+  --lightreader-background-272a2c: #2e323a;
+  --lightreader-background-2e3234: #383c43;
+  --lightreader-background-3a3f41: #484c52;
+  --lightreader-border-736a5e: #484c52;
+  --lightreader-background-52595c: #696b71;
+  --lightreader-border-686156: #696b71;
+  --lightreader-background-596064: #898b8f;
+  --lightreader-text-55ccff: #55ccff;
+  --lightreader-border-006b99: #55ccff;
+  --lightreader-text-d3cfc9: #222222;
+  --lightreader-background-5c0017: #ffbbcc;
+  --lightreader-background-135e33: #aaeebb;
+  --lightreader-background-090a0b99: rgba(12, 12, 13, 0.6);
+  --lightreader-background-00000000: rgba(0, 0, 0, 0);
+  --lightreader-background-001b5f: #002277;
+  /* Color System */
+  --darkreader-neutral-background: var(--darkreader-background-ffffff, #181a1b);
+  --darkreader-neutral-text: var(--darkreader-text-000000, #e8e6e3);
+  --darkreader-selection-background: var(
+    --darkreader-background-0060d4,
+    #004daa
+  );
+  --darkreader-selection-text: var(--darkreader-text-ffffff, #e8e6e3);
+  --darkreader-background-ffffff: #181a1b;
+  --darkreader-text-ffffff: #e8e6e3;
+  --darkreader-border-404040: #776e62;
+  --darkreader-text-000000: #e8e6e3;
+  --darkreader-border-4c4c4c: #736b5e;
+  --darkreader-text-0040ff: #3391ff;
+  --darkreader-border-808080: #545b5e;
+  --darkreader-text-a9a9a9: #b2aba1;
+  --darkreader-background-faffbd: #404400;
+  --darkreader-background-f1f1f1: #202324;
+  --darkreader-background-b0b0b0: #454a4d;
+  --darkreader-background-0060d4: #004daa;
+  --darkreader-background-ffd76e: #684b00;
+  --darkreader-background-c59d00: #9e7e00;
+  --darkreader-text-302505: #d7d4cf;
+  --darkreader-background-add8e6: #1b4958;
+  --darkreader-background-cfecf5: #0f3a47;
+  --darkreader-background-f5f5f5: #1e2021;
+  --darkreader-background-faedda: #432c09;
+  --darkreader-background-85c3d8: #245d70;
+  --darkreader-background-fafbfc: #1a1c1e;
+  --darkreader-background-f2f3f4: #1f2123;
+  --darkreader-background-e6e7e8: #26292a;
+  --darkreader-border-e6e7e8: #373b3e;
+  --darkreader-background-cccdce: #34393b;
+  --darkreader-border-cccdce: #3e4346;
+  --darkreader-background-b3b4b5: #42484b;
+  --darkreader-text-0066ee: #3da3ff;
+  --darkreader-border-0066ee: #004fb8;
+  --darkreader-background-282c34: #20232a;
+  --darkreader-text-282c34: #cbc6c0;
+  --darkreader-background-2e323a: #272a2c;
+  --darkreader-background-383c43: #2e3234;
+  --darkreader-background-484c52: #3a3f41;
+  --darkreader-border-484c52: #736a5e;
+  --darkreader-background-696b71: #52595c;
+  --darkreader-border-696b71: #686156;
+  --darkreader-background-898b8f: #596064;
+  --darkreader-text-55ccff: #55ccff;
+  --darkreader-border-55ccff: #006b99;
+  --darkreader-text-222222: #d3cfc9;
+  --darkreader-background-ffbbcc: #5c0017;
+  --darkreader-background-aaeebb: #135e33;
+  --darkreader-background-0c0c0d99: rgba(9, 10, 11, 0.6);
+  --darkreader-background-00000000: rgba(0, 0, 0, 0);
+  --darkreader-background-002277: #001b5f;
+
+  /* Core Greens */
+  --natural-0: #e5d9b6; /* Light beige-cream (base neutral) */
+  --natural-1: #c1d392; /* Pale sage green */
+  --natural-2: #a4be7b; /* Muted celery green */
+  --natural-3: #7ba05d; /* Fresh moss green */
+  --natural-4: #5f8d4e; /* Forest green */
+  --natural-5: #487545; /* Deep pine green */
+  --natural-6: #285430; /* Dark evergreen */
+  --natural-7: #1a3d27; /* Near-black green */
+
+  /* Earth Tones (Complementary Neutrals) */
+  --earth-0: #f5f0e1; /* Warm off-white */
+  --earth-1: #d4c8a9; /* Weathered sand */
+  --earth-2: #b8a47e; /* Dry clay */
+  --earth-3: #8c7c5e; /* Rich soil */
+
+  /* Accent Colors (Natural Highlights) */
+  --accent-1: #c7472f; /* Terracotta red */
+  --accent-2: #e9b44c; /* Golden harvest yellow */
+  --accent-3: #6b9080; /* Cool slate teal */
+
+  /* Sky/Water Tones (Cool Neutrals) */
+  --sky-0: #f3f7f0; /* Morning mist white */
+  --sky-1: #dde5d8; /* Soft cloud gray */
+  --sky-2: #b7c9b5; /* Mossy air */
+  --sky-3: #8fa899; /* Stormy seafoam */
+
+  /* Floral Accents (Seasonal Highlights) */
+  --blossom-1: #e8c8c3; /* Dried rose */
+  --blossom-2: #d4a79e; /* Terracotta blush */
+  --blossom-3: #b37062; /* Autumn leaf */
+
+  /* Stone Series (True Neutrals) */
+  --stone-0: #f8f5f0; /* Sun-bleached limestone */
+  --stone-1: #e3ddd3; /* Dry riverbed */
+  --stone-2: #c4bcae; /*• Weathered granite */
+  --stone-3: #9a9287; /*• Deep shale */
+
+  /* Twilight Tones (Transitional Colors) */
+  --twilight-1: #6b9080; /* Lichen teal (matches original accent-3) */
+  --twilight-2: #4a7668; /* Forest stream */
+  --twilight-3: #345e54; /* Pine shadow */
+
+  /* Functional Accents */
+  --signal-1: #dba53d; /* Honey amber (warning/attention) */
+  --signal-2: #9e2b26; /* Iron oxide red (errors/danger)  */
+  --signal-3: #3c6e71; /* Deep pond (information/links)  */
+
+  /* Typography */
+  --ff-base: system-ui, sans-serif;
+  --fw-bold: 700;
+
+  /* Spacing System */
+  --spacing-100: 0.25rem;
+  --spacing-400: 1rem;
+
+  /* Shadows */
+  --shadow-regular: 0 2px 8px hsl(0 0% 0% / 0.1);
+
+  /* Device-agnostic breakpoints */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-laptop: 1024px;
+  --bp-desktop: 1280px;
+  --bp-wide: 1536px;
+
+  /* Fluid typography   */
+  --fluid-min-width: 320;
+  --fluid-max-width: 1440;
+  --fluid-min-size: 1.15;
+  --fluid-max-size: 1.25;
+
+  --header-height: 70px;
+  --header-height-scrolled: 50px;
+}
