@@ -77,12 +77,12 @@ class App {
   showWelcomeMessage(name) {
     const heroSection = document.getElementById('hero');
 
-    // Create welcome message element
     const welcomeDiv = document.createElement('div');
     welcomeDiv.className = 'welcome-message';
     welcomeDiv.innerHTML = `
-      <h2>Welcome, ${name}!</h2>
-      <p>Thank you for your interest!</p>
+      <h2>Seja bem-vindo(a), ${name}!</h2>
+      <p>É um prazer tê-lo(a) conosco. Agradecemos seu interesse e esperamos que tenha uma ótima experiência.</p>
+      <p class="small-text">Estamos à disposição para qualquer dúvida ou informação adicional.</p>
     `;
 
     // Add to hero section

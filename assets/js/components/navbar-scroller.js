@@ -60,28 +60,28 @@ export class NavbarScroller {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
-
+    
         if (targetId === '#hero') {
           window.scrollTo({ top: 0, behavior: 'smooth' });
           history.pushState(null, null, targetId);
           return;
         }
-
+    
         const targetElement = document.querySelector(targetId);
         if (!targetElement) return;
-
-        // Dynamic header height calculation
-        const targetPosition = targetElement.offsetTop;
-        const headerHeight =
-          targetPosition > self.scrollOffset
-            ? self.headerHeightScrolled
-            : self.headerHeight;
-
+    
+        // Get current header height (more reliable)
+        const header = document.querySelector('.nav-header');
+        const headerHeight = header.offsetHeight;
+        
+        // Add some extra padding if needed (e.g., 20px)
+        const offsetPosition = targetElement.offsetTop - headerHeight + 86;
+    
         window.scrollTo({
-          top: targetPosition - headerHeight,
-          behavior: 'smooth',
+          top: offsetPosition,
+          behavior: 'smooth'
         });
-
+    
         history.pushState(null, null, targetId);
       });
     });
