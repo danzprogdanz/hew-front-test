@@ -6,6 +6,7 @@
   grid-auto-flow: column;
   transition: transform 0.5s var(--ease-out);
   max-height: 56vh;
+  min-height: 50vh;
 }
 
 .carousel__item {

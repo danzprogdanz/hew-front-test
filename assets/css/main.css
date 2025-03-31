@@ -7,7 +7,6 @@
 /* Utilities */
 @import './utilities/layout.css';
 @import './utilities/spacing.css';
-@import './utilities/typography.css';
 
 /* Components */
 @import './components/buttons.css';

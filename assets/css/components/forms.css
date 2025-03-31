@@ -67,4 +67,5 @@ input:focus {
 
 [aria-invalid='true'] {
   border-color: #dc3545;
+  font-weight: 900;
 }

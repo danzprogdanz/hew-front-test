@@ -39,3 +39,57 @@
   overflow: hidden;
   transform: translateZ(0);
 }
+
+@media (max-width: 768px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .form-section {
+    padding: 2rem 1.5rem;
+    order: 1; /* Garante que o form fique abaixo do header */
+  }
+
+  .form-header {
+    text-align: center;
+    padding-bottom: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .benefits-list {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+  }
+
+  .urgency-badge {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .lead-form {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 1.5rem;
+  }
+  
+  .form-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .benefit-item {
+    font-size: 0.85rem;
+  }
+}

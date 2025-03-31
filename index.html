@@ -46,6 +46,8 @@
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
           'Helvetica Neue', Arial, sans-serif;
+        position: relative; /* Add this */
+        margin: 0; /* Ensure consistent margins */
       }
 
       .lead-capture {
@@ -90,7 +92,7 @@
         gap: var(--spacing-lg);
         justify-content: space-around;
         padding: 4rem;
-
+        min-height: 500px;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -141,7 +143,32 @@
     <main class="lead-capture" id="leadCapture">
       <div class="split-layout">
         <!-- Media Section -->
-        <div class="media-section" aria-label="Demonstração do produto"></div>
+        <div class="media-section" aria-label="Demonstração do produto">
+          <!-- <header class="form-header">
+            <h1 id="formHeading" class="form-title">
+              <span class="text-accent">Sua Revolução</span> 
+              <span class="text-primary">Nutricional</span> 
+              Começa Aqui!
+            </h1>
+            
+            <div class="benefits-list">
+              <p class="benefit-item">🥇 20% OFF na Primeira Compra</p>
+              <p class="benefit-item">📖 Guia Nutricional Exclusivo</p>
+              <p class="benefit-item">🛡️ Garantia de Satisfação</p>
+            </div>
+          
+            <p class="form-subtitle">
+              "Descubra em 30 segundos como <strong>87% dos nossos clientes</strong> 
+              alcançaram mais energia, vitalidade e bem-estar diário!"
+            </p>
+          
+            <div class="urgency-badge">
+              <div class="pulse-effect"></div>
+              <span>ÚLTIMAS 50 OFERTAS DISPONÍVEIS!</span>
+            </div>
+          </header> -->
+          
+        </div>
 
         <!-- Form Section -->
         <section class="form-section" aria-labelledby="formHeading">
@@ -220,7 +247,13 @@
     <div class="product-page" id="productPage" style="display: none">
       <!-- Header Fixo -->
       <header id="nav-header" class="nav-header">
-        <div class="header-logo" id="logo">Logo</div>
+        <div class="header-logo" id="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="0 0 98.901 98.901">
+            <g transform="rotate(90 49.45 49.45) translate(2, 0)">
+              <path class="logo-path" d="M87.879 62.468C85.969 35.193 44.875 0 44.875 0S9.072 40.573 10.981 67.84c1.752 25.051 21.581 31.088 36.858 31.061.252-3.662.404-10.363.404-10.363-1.665-.465-3.354-1.067-4.745-1.766-1.357-.698-2.644-1.513-3.848-2.412-2.411-1.797-4.451-4.021-5.932-6.485 2.067 2.002 4.481 3.519 7.042 4.545 1.271.51 2.585.917 3.9 1.208 1.293.284 2.71.486 3.869.489 0 0 .331-8.21.331-14.305-1.539-.458-2.807-1.026-4.114-1.69-1.364-.695-2.651-1.506-3.855-2.406-2.411-1.8-4.451-4.021-5.933-6.491 2.067 2.012 4.488 3.524 7.043 4.552 1.28.513 2.585.924 3.899 1.207.965.209 1.992.373 2.932.449-.063-4.758-.215-9.668-.468-14.688l-.137.924c-1.155-.383-1.983-.842-2.887-1.368-.876-.518-1.682-1.109-2.437-1.754-1.506-1.285-2.736-2.83-3.574-4.485 1.43 1.194 3.032 2.036 4.683 2.551.827.255 1.663.442 2.491.549.546.07 1.134.12 1.656.12-.055-.897-.108-1.799-.171-2.702-1.198-17.177-.171-11.175 1.545 2.688.588.027 1.307-.022 1.959-.11.835-.108 1.673-.294 2.498-.546 1.652-.511 3.262-1.35 4.682-2.544-.832 1.655-2.067 3.196-3.573 4.481-.753.646-1.567 1.233-2.437 1.751-.819.479-1.602.89-2.599 1.252.415 3.498.867 7.323 1.327 11.3 1.098-.027 2.391-.219 3.578-.479 1.321-.288 2.629-.691 3.908-1.205 2.553-1.026 4.969-2.539 7.043-4.548-1.485 2.468-3.525 4.688-5.934 6.485-1.205.896-2.492 1.711-3.854 2.412-1.342.681-2.649 1.263-4.244 1.722.689 6.036 1.855 14.982 1.855 14.982 1.149 0 2.562-.209 3.859-.49 1.321-.287 2.636-.694 3.908-1.207 2.554-1.027 4.97-2.543 7.043-4.545-1.485 2.464-3.524 4.688-5.931 6.488-1.208.896-2.494 1.711-3.856 2.409-1.383.705-2.714 1.308-4.387 1.772 0 0 .554 7.885.972 11.748C70.545 96.388 89.648 87.713 87.879 62.468z"/>
+            </g>
+          </svg>
+        </div>
         <nav class="header-nav" id="navbar" aria-label="Navegação principal">
           <ul role="menu">
             <li role="none"><a role="menuitem" href="#hero">Home</a></li>
@@ -544,16 +577,11 @@
           <div class="testimonials__carousel" data-carousel>
             <div class="testimonials__track" data-track>
               <!-- Testimonial Items -->
-              <article
-                class="testimonial"
-                itemscope
-                itemtype="https://schema.org/Review"
-              >
+              <article class="testimonial" itemscope itemtype="https://schema.org/Review">
                 <div class="testimonial__content">
                   <blockquote class="testimonial__quote">
                     <p itemprop="reviewBody">
-                      Depois de 3 meses usando o produto, minha energia aumentou
-                      significativamente. Recomendo!
+                      O produto mudou minha vida! Em apenas 2 semanas já senti mais disposição e vitalidade. Vale cada centavo!
                     </p>
                   </blockquote>
                   <footer class="testimonial__footer">
@@ -567,10 +595,10 @@
                     />
                     <div class="testimonial__author">
                       <h3 class="testimonial__name" itemprop="author">
-                        Ana Silva
+                        Carlos Mendes
                       </h3>
                       <p class="testimonial__meta">
-                        Consultora de Saúde • 42 anos
+                        Personal Trainer • 35 anos
                       </p>
                       <div
                         class="testimonial__rating"
@@ -582,16 +610,12 @@
                   </footer>
                 </div>
               </article>
-              <article
-                class="testimonial"
-                itemscope
-                itemtype="https://schema.org/Review"
-              >
+              
+              <article class="testimonial" itemscope itemtype="https://schema.org/Review">
                 <div class="testimonial__content">
                   <blockquote class="testimonial__quote">
                     <p itemprop="reviewBody">
-                      Depois de 3 meses usando o produto, minha energia aumentou
-                      significativamente. Recomendo!
+                      Nunca imaginei que um produto natural pudesse ter tanto efeito. Minha qualidade de sono melhorou 100%!
                     </p>
                   </blockquote>
                   <footer class="testimonial__footer">
@@ -605,10 +629,10 @@
                     />
                     <div class="testimonial__author">
                       <h3 class="testimonial__name" itemprop="author">
-                        Ana Silva
+                        Juliana Almeida
                       </h3>
                       <p class="testimonial__meta">
-                        Consultora de Saúde • 42 anos
+                        Professora • 38 anos
                       </p>
                       <div
                         class="testimonial__rating"
@@ -620,16 +644,12 @@
                   </footer>
                 </div>
               </article>
-              <article
-                class="testimonial"
-                itemscope
-                itemtype="https://schema.org/Review"
-              >
+              
+              <article class="testimonial" itemscope itemtype="https://schema.org/Review">
                 <div class="testimonial__content">
                   <blockquote class="testimonial__quote">
                     <p itemprop="reviewBody">
-                      Depois de 3 meses usando o produto, minha energia aumentou
-                      significativamente. Recomendo!
+                      Resultados impressionantes! Minha pele está mais saudável e meu cabelo nunca esteve tão forte. Super recomendo!
                     </p>
                   </blockquote>
                   <footer class="testimonial__footer">
@@ -643,10 +663,10 @@
                     />
                     <div class="testimonial__author">
                       <h3 class="testimonial__name" itemprop="author">
-                        Ana Silva
+                        Fernanda Costa
                       </h3>
                       <p class="testimonial__meta">
-                        Consultora de Saúde • 42 anos
+                        Esteticista • 29 anos
                       </p>
                       <div
                         class="testimonial__rating"
@@ -658,16 +678,12 @@
                   </footer>
                 </div>
               </article>
-              <article
-                class="testimonial"
-                itemscope
-                itemtype="https://schema.org/Review"
-              >
+              
+              <article class="testimonial" itemscope itemtype="https://schema.org/Review">
                 <div class="testimonial__content">
                   <blockquote class="testimonial__quote">
                     <p itemprop="reviewBody">
-                      Depois de 3 meses usando o produto, minha energia aumentou
-                      significativamente. Recomendo!
+                      Depois de anos tentando diversos produtos, finalmente encontrei um que realmente funciona. Me sinto renovado!
                     </p>
                   </blockquote>
                   <footer class="testimonial__footer">
@@ -681,10 +697,10 @@
                     />
                     <div class="testimonial__author">
                       <h3 class="testimonial__name" itemprop="author">
-                        Ana Silva
+                        Roberto Santos
                       </h3>
                       <p class="testimonial__meta">
-                        Consultora de Saúde • 42 anos
+                        Engenheiro • 45 anos
                       </p>
                       <div
                         class="testimonial__rating"
@@ -696,16 +712,12 @@
                   </footer>
                 </div>
               </article>
-              <article
-                class="testimonial"
-                itemscope
-                itemtype="https://schema.org/Review"
-              >
+              
+              <article class="testimonial" itemscope itemtype="https://schema.org/Review">
                 <div class="testimonial__content">
                   <blockquote class="testimonial__quote">
                     <p itemprop="reviewBody">
-                      Depois de 3 meses usando o produto, minha energia aumentou
-                      significativamente. Recomendo!
+                      Comprei sem muitas expectativas, mas fiquei surpresa! Em um mês já senti diferença no meu bem-estar geral.
                     </p>
                   </blockquote>
                   <footer class="testimonial__footer">
@@ -719,10 +731,10 @@
                     />
                     <div class="testimonial__author">
                       <h3 class="testimonial__name" itemprop="author">
-                        Ana Silva
+                        Patrícia Lima
                       </h3>
                       <p class="testimonial__meta">
-                        Consultora de Saúde • 42 anos
+                        Nutricionista • 40 anos
                       </p>
                       <div
                         class="testimonial__rating"
@@ -806,14 +818,11 @@
             <!-- Brand Column -->
             <div class="footer-brand">
               <div class="footer-logo" aria-hidden="true">
-                <svg
-                  viewBox="0 0 48 48"
-                  style="height: 2.5rem; fill: var(--natural-4)"
-                >
-                  <path
-                    d="M24 4L6 16v16l18 12 18-12V16L24 4zm0 27c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z"
-                  />
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="25" viewBox="0 0 98.901 98.901">
+                  <g transform="rotate(90 49.45 49.45) translate(2, 0)">
+                    <path fill="#f8f5f0" d="M87.879 62.468C85.969 35.193 44.875 0 44.875 0S9.072 40.573 10.981 67.84c1.752 25.051 21.581 31.088 36.858 31.061.252-3.662.404-10.363.404-10.363-1.665-.465-3.354-1.067-4.745-1.766-1.357-.698-2.644-1.513-3.848-2.412-2.411-1.797-4.451-4.021-5.932-6.485 2.067 2.002 4.481 3.519 7.042 4.545 1.271.51 2.585.917 3.9 1.208 1.293.284 2.71.486 3.869.489 0 0 .331-8.21.331-14.305-1.539-.458-2.807-1.026-4.114-1.69-1.364-.695-2.651-1.506-3.855-2.406-2.411-1.8-4.451-4.021-5.933-6.491 2.067 2.012 4.488 3.524 7.043 4.552 1.28.513 2.585.924 3.899 1.207.965.209 1.992.373 2.932.449-.063-4.758-.215-9.668-.468-14.688l-.137.924c-1.155-.383-1.983-.842-2.887-1.368-.876-.518-1.682-1.109-2.437-1.754-1.506-1.285-2.736-2.83-3.574-4.485 1.43 1.194 3.032 2.036 4.683 2.551.827.255 1.663.442 2.491.549.546.07 1.134.12 1.656.12-.055-.897-.108-1.799-.171-2.702-1.198-17.177-.171-11.175 1.545 2.688.588.027 1.307-.022 1.959-.11.835-.108 1.673-.294 2.498-.546 1.652-.511 3.262-1.35 4.682-2.544-.832 1.655-2.067 3.196-3.573 4.481-.753.646-1.567 1.233-2.437 1.751-.819.479-1.602.89-2.599 1.252.415 3.498.867 7.323 1.327 11.3 1.098-.027 2.391-.219 3.578-.479 1.321-.288 2.629-.691 3.908-1.205 2.553-1.026 4.969-2.539 7.043-4.548-1.485 2.468-3.525 4.688-5.934 6.485-1.205.896-2.492 1.711-3.854 2.412-1.342.681-2.649 1.263-4.244 1.722.689 6.036 1.855 14.982 1.855 14.982 1.149 0 2.562-.209 3.859-.49 1.321-.287 2.636-.694 3.908-1.207 2.554-1.027 4.97-2.543 7.043-4.545-1.485 2.464-3.524 4.688-5.931 6.488-1.208.896-2.494 1.711-3.856 2.409-1.383.705-2.714 1.308-4.387 1.772 0 0 .554 7.885.972 11.748C70.545 96.388 89.648 87.713 87.879 62.468z"/>
+                  </g>
+                </svg>                
                 <span class="sr-only">VitalSuplementos</span>
               </div>
               <p class="footer-slogan">Sua Saúde, Nossa Missão</p>

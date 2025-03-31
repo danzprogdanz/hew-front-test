@@ -39,13 +39,28 @@
   color: var(--stone-0);
 }
 
-.header-logo {
-  font-size: 35px; /* Original size */
-  transition: all 0.3s ease-in-out;
+.header-logo svg {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(6%) saturate(1106%) hue-rotate(349deg) brightness(93%) contrast(85%);
+  transition: filter 0.3s ease-in-out;
 }
 
-.header-logo.scrolled {
-  font-size: 25px; /* Smaller size when scrolled */
+.header-logo .logo-path {
+  fill: var(--natural-7); /* Same as your text color by default */
+  transition: fill 0.3s ease-in-out;
+}
+
+.nav-header.scrolled .header-logo svg {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(325deg) brightness(103%) contrast(101%);
+}
+
+/* Scrolled state */
+.nav-header.scrolled .header-logo .logo-path {
+  fill: var(--stone-0); /* Same as your scrolled text color */
+}
+
+/* Optional: Scale the SVG like your text */
+.header-logo.scrolled svg {
+  transform: scale(0.714); /* 25/35 = ~0.714 to match your font size change */
 }
 
 .header-nav a {
@@ -102,4 +117,32 @@
 .nav-header li {
   display: inline-block;
   margin: 0 1rem;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  display: block;
+  margin: 6px auto;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Active state for hamburger */
+.hamburger-active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-active .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
