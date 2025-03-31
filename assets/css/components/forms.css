@@ -63,9 +63,135 @@ input:focus {
 
 .error-message:not(:empty) {
   opacity: 1;
+  font-weight: 900;
 }
 
 [aria-invalid='true'] {
   border-color: #dc3545;
-  font-weight: 900;
+}
+
+.form-header {
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 2.25rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--natural-6);
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.5px;
+}
+
+.text-accent {
+  color: var(--accent-1);
+  display: block;
+}
+
+.text-primary {
+  color: var(--natural-5);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.benefits-list {
+  background-color: var(--earth-0);
+  padding: 1.25rem;
+  border-radius: 0.375rem;
+  margin: 0 auto 1.75rem auto;
+  max-width: 28rem;
+  border: 1px solid var(--earth-1);
+}
+
+.benefit-item {
+  font-size: 1.125rem;
+  color: var(--natural-5);
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.benefit-item:not(:last-child) {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--earth-1);
+}
+
+.form-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--natural-4);
+  margin: 0 auto 2rem auto;
+  max-width: 36rem;
+}
+
+.form-subtitle strong {
+  color: var(--natural-6);
+  font-weight: 600;
+}
+
+.urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--signal-1);
+  color: var(--natural-7);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(219, 165, 61, 0.3);
+  justify-content: center;
+}
+
+.pulse-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  background-color: var(--signal-1);
+  opacity: 0.7;
+  z-index: -1;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-header {
+    padding: 1.75rem;
+  }
+  
+  .form-title {
+    font-size: 1.75rem;
+  }
+  
+  .benefits-list {
+    padding: 1rem;
+  }
+  
+  .benefit-item,
+  .form-subtitle {
+    font-size: 1rem;
+  }
 }

@@ -108,7 +108,10 @@
 
       .media-section {
         position: relative;
-        background: transparent;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
       }
 
       @media (max-width: 768px) {
@@ -144,7 +147,7 @@
       <div class="split-layout">
         <!-- Media Section -->
         <div class="media-section" aria-label="Demonstração do produto">
-          <!-- <header class="form-header">
+          <header class="form-header">
             <h1 id="formHeading" class="form-title">
               <span class="text-accent">Sua Revolução</span> 
               <span class="text-primary">Nutricional</span> 
@@ -166,7 +169,7 @@
               <div class="pulse-effect"></div>
               <span>ÚLTIMAS 50 OFERTAS DISPONÍVEIS!</span>
             </div>
-          </header> -->
+          </header> 
           
         </div>
 
@@ -467,16 +470,16 @@
           <figure class="about__visual">
             <picture>
               <source
-                srcset="assets/img/about-product.webp"
-                type="image/webp"
+                srcset="https://img.freepik.com/premium-psd/supplement-bottle-psd-mockup-template_590762-93.jpg"
+                type="image/jpg"
               />
               <img
-                src="assets/img/about-product.jpg"
+                src="https://img.freepik.com/premium-psd/supplement-bottle-psd-mockup-template_590762-93.jpg"
                 alt="Cápsulas do VitalSuplementos com ingredientes naturais ao fundo"
                 class="about__image"
                 loading="lazy"
-                width="600"
-                height="400"
+                width="500"
+                height="300"
               />
             </picture>
             <figcaption class="about__caption">
